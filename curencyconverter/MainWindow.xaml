@@ -1,0 +1,81 @@
+﻿<Window x:Name="wpfform" x:Class="curencyconverter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:curencyconverter"
+         xmlns:fa="http://schemas.fontawesome.io/icons/"
+        mc:Ignorable="d"
+        Title="Convertisseur de monnaies" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen" Height="539.516" Width="1008.065" Loaded="wpfform_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="150"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="150
+                           "></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="2" Width="800" CornerRadius="10" BorderThickness="5">
+          <!--coin arrondie-->
+            <Border.BorderBrush>
+              
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0" >
+                        <GradientStop Color="#f46b45" Offset="0.0"></GradientStop>
+                        <GradientStop Color="#eea849" Offset="0.50"></GradientStop>
+                    </LinearGradientBrush>
+              
+            </Border.BorderBrush>
+            <Rectangle Grid.Row="2">
+                <Rectangle.Fill>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0" >
+                        <GradientStop Color="#f46b45" Offset="0.0"></GradientStop>
+                        <GradientStop Color="#eea849" Offset="0.70"></GradientStop>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Border>
+        <StackPanel Grid.Row="0" Width="1000" Height="40" Orientation="Horizontal">
+            <Label Content="Convertisseur RIGEL IS" Width="1000" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="27" Foreground="#f46b45"></Label>
+          
+        </StackPanel>
+        <StackPanel Grid.Row="1" Width="1000" Height="70" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Height="35" Width="1000" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Montant Convertis" FontSize="20"></Label>
+            <Label Name="lblcrncy" Content="Resultat" Height="35" Width="1000" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  FontSize="20" Foreground="Black"></Label>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Height="60" Width="800">
+            <Label Content="Entrer le Montant :" Height="40" Width="150" Margin="35 0 0 0" FontSize="17" Foreground="White" VerticalAlignment="Bottom" ></Label>
+            <Label Content="Depuis :" Height="40" Width="150" Margin="120 0 0 0" FontSize="17" Foreground="White" VerticalAlignment="Bottom" ></Label>
+            <Label Content="Vers :" Height="40" Width="150" Margin="140 0 0 0" FontSize="17" Foreground="White" VerticalAlignment="Bottom" ></Label>
+        </StackPanel>
+        <StackPanel  Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Height="90" Width="800">
+       
+            <TextBox  Name="crncytxt"  VerticalContentAlignment="Center" VerticalAlignment="Bottom" Width="200" Height="30" Margin="40 0 0 0" PreviewTextInput="NumberValidationTextBox" ></TextBox>
+            <ComboBox Name="cmbdepuis" Width="170" VerticalContentAlignment="Center" VerticalAlignment="Bottom" Height="30" Margin="60 0 40 0" MaxDropDownHeight="150" />
+            <fa:ImageAwesome Icon="Exchange" Height="30" Width="30" Foreground="Beige" VerticalAlignment="Bottom"></fa:ImageAwesome>
+            <ComboBox Name="cmbvers" Width="170" VerticalContentAlignment="Center" VerticalAlignment="Bottom" Height="30" Margin="60 0 40 0" MaxDropDownHeight="150" ></ComboBox>
+
+        </StackPanel>
+
+        <StackPanel  Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Height="90" Width="800">
+            <Button Name="convertir" Width="150" Height="35" Content="Convertir" Click="convertir_Click" Margin="350 0 20 0" Foreground="Beige" FontSize="18" >
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0" >
+                        <GradientStop Color="#f46b45" Offset="0.0"></GradientStop>
+                        <GradientStop Color="#eea849" Offset="0.70"></GradientStop>
+                    </LinearGradientBrush>
+                </Button.Background>
+            
+                </Button>
+            <Button Name="rfrsh" Width="150" Height="35" Content="Raffrechir" Click="rfrsh_Click"  Foreground="Beige" FontSize="18" >
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0" >
+                        <GradientStop Color="#f46b45" Offset="0.0"></GradientStop>
+                        <GradientStop Color="#eea849" Offset="0.70"></GradientStop>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </StackPanel>
+
+    </Grid>
+</Window>
